@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>五目並べ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="spaceCanvas"></canvas>
+
+<h1>五目並べ</h1>
+<div id="modeSelect">
+  <button id="pvpBtn" class="mode-btn active">対人モード</button>
+  <button id="cpuBtn" class="mode-btn">CPU対戦</button>
+</div>
+<div id="cpuLevelSelect">
+  <span>CPUレベル:</span>
+  <button class="level-btn" data-level="1">1</button>
+  <button class="level-btn" data-level="2">2</button>
+  <button class="level-btn active" data-level="3">3</button>
+  <button class="level-btn" data-level="4">4</button>
+  <button class="level-btn" data-level="5">5</button>
+  <button class="level-btn" data-level="6">6</button>
+</div>
+<div id="status">赤（ハート）の番です</div>
+<div id="boardWrap">
+  <div id="board">
+    <svg id="gridSvg"></svg>
+  </div>
+  <svg id="winLineSvg"><line id="winLine" x1="0" y1="0" x2="0" y2="0"/></svg>
+</div>
+<div id="controls">
+  <button id="resetBtn">リセット</button>
+</div>
+
+<div id="rules">
+  <h2>遊び方</h2>
+  <ul>
+    <li>赤（ハート）と青（星）が交互に、盤の線の交点にコマを置きます</li>
+    <li>縦・横・斜めのいずれかで、自分のコマを5つ連続で並べたら勝ちです</li>
+    <li>盤がすべて埋まっても決着がつかなければ引き分けです</li>
+    <li>勝負がつくと勝った方の色で線が引かれ、数秒後に自動で盤面がリセットされます</li>
+  </ul>
+</div>
+
+<div id="winOverlay">
+  <div id="winMessage"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
